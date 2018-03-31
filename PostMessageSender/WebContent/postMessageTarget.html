@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Content</h1>
+	<script type="text/javascript">
+	window.onload = function () {
+		console.log("Loading Content")
+	};
+	
+	function sendMsg(){
+		var msg = document.getElementById("msg").value;
+		console.log("msg:"+msg);
+		parent.postMessage(msg, "http://localhost:8081");
+	}
+	
+	</script>
+	<input type="text" id="msg"><br>
+	<button onclick="sendMsg()">Send Msg</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Container</h1>
+<script type="text/javascript">
+window.onload = function () {
+	console.log("Loading Container")
+};
+
+function recieveMessage(evt){
+	document.getElementById("displayMsg").innerHTML = "I got " + evt.data + " from " + evt.origin;;
+}
+
+window.addEventListener("message", recieveMessage, false);
+
+</script>
+
+<iframe id="da-iframe" src="http://localhost:8080/PostMessageSender/postMessageTarget.html">
+	
+ </iframe>
+<div id="displayMsg"></div>
+</body>
+</html>
